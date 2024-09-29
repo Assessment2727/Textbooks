@@ -29,6 +29,13 @@
         th {
             background-color: #23272A;
         }
+        a {
+            color: #43B581; /* Improved link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         select {
             margin: 20px;
             padding: 5px;
@@ -68,33 +75,51 @@
             <td>
                 <a href="https://cp.sync.com/mfs-60:2ec19b9e992aa01b56d7e5838967fc80=============================/u/National%20Physics%202%20Linear%20Motion%20%26%20Waves.pdf?cachekey=60:2ec19b9e992aa01b56d7e5838967fc80=============================&datakey=CTJglde6LVcV9W8PQGGksyeNfYyGZfws+Z2N8JrsN6kderYk2U0ruH+oKzJ/MaWhwG4hr9LAob4odJiCwtrDBWdcskqfU9POkSGfCZGGPO1bsXQEeqq6htav8/LP0AqvpVED/dkqGMCfzYNbvcCt3bzKbibE55CmO206lulAh2+Ri+GCJQ7VAnyuU8TSLWdvDPxD+ZEAyTbDFCQyV/WW6A70FClLgbDn9oJnltzNB/901T1zg6k9Q+NrP4Tb1PRUJNJwaWlvB1BC1cpCqM+JApungtXhDT8pUzqjfJCNGhO2X4qQWRY7+oyVeqBC1ZZFZksZmAan90HTQbfwlRk8Mg&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iTmF0aW9uYWwlMjBQaHlzaWNzJTIwMiUyMExpbmVhciUyME1vdGlvbiUyMCUyNiUyMFdhdmVzLnBkZiI7ZmlsZW5hbWUqPVVURi04JydOYXRpb25hbCUyMFBoeXNpY3MlMjAyJTIwTGluZWFyJTIwTW90aW9uJTIwJTI2JTIwV2F2ZXMucGRmOw&servtime=1727597846277&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
             </td>
-            <td>192.2 MB</td>
+                        <td>192.2 MB</td>
+        </tr>
+        <tr data-size="75.0">
+            <td>National Physics 3 Energy & Power</td>
+            <td>
+                <a href="https://example.com/NationalPhysics3Energy.pdf" target="_blank">View PDF</a>
+            </td>
+            <td>75.0 MB</td>
+        </tr>
+        <tr data-size="120.5">
+            <td>National Physics 4 Forces & Motion</td>
+            <td>
+                <a href="https://example.com/NationalPhysics4Forces.pdf" target="_blank">View PDF</a>
+            </td>
+            <td>120.5 MB</td>
         </tr>
     </table>
 
     <script>
         function sortResources() {
-           const alphaSelect = document.getElementById('sort-alpha');
-            const sizeSelect = document.getElementById('sort-size');
-            const table = document.getElementById('resources-table');
-            const rows = Array.from(table.rows).slice(1); // Get all rows except the header
+            const alphaSort = document.getElementById("sort-alpha").value;
+            const sizeSort = document.getElementById("sort-size").value;
+            const table = document.getElementById("resources-table");
+            const rows = Array.from(table.rows).slice(1); // Exclude header
 
-            // Sort by alphabetical order
-            if (alphaSelect.value === 'asc') {
-                rows.sort((a, b) => a.cells[0].innerText.localeCompare(b.cells[0].innerText));
-            } else if (alphaSelect.value === 'desc') {
-                rows.sort((a, b) => b.cells[0].innerText.localeCompare(a.cells[0].innerText));
+            if (alphaSort) {
+                rows.sort((a, b) => {
+                    const aText = a.cells[0].innerText.toLowerCase();
+                    const bText = b.cells[0].innerText.toLowerCase();
+                    return alphaSort === "asc" ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                });
             }
 
-            // Sort by file size
-            if (sizeSelect.value === 'asc') {
-                rows.sort((a, b) => parseFloat(a.getAttribute('data-size')) - parseFloat(b.getAttribute('data-size')));
-            } else if (sizeSelect.value === 'desc') {
-                rows.sort((a, b) => parseFloat(b.getAttribute('data-size')) - parseFloat(a.getAttribute('data-size')));
+            if (sizeSort) {
+                rows.sort((a, b) => {
+                    const aSize = parseFloat(a.dataset.size);
+                    const bSize = parseFloat(b.dataset.size);
+                    return sizeSort === "asc" ? aSize - bSize : bSize - aSize;
+                });
             }
 
             // Append sorted rows back to the table
-            rows.forEach(row => table.appendChild(row));
+            for (const row of rows) {
+                table.appendChild(row);
+            }
         }
     </script>
 </body>
