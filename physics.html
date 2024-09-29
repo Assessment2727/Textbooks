@@ -193,6 +193,14 @@
     </table>
 
     <script>
+    function toggleChapters() {
+            const chapters = document.getElementById("chapters");
+            if (chapters.classList.contains("hidden")) {
+                chapters.classList.remove("hidden");
+            } else {
+                chapters.classList.add("hidden");
+            }
+        }
         function sortResources() {
             const alphaSort = document.getElementById("sort-alpha").value;
             const sizeSort = document.getElementById("sort-size").value;
