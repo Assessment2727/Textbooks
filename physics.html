@@ -40,6 +40,9 @@
             margin: 20px;
             padding: 5px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -188,12 +191,43 @@
                 <a href="https://cp.sync.com/mfs-60:d7fba470d40d0766875d715550acf1c5=============================/u/The%20Physics%20Book%20Workbook%20Units%203%20%26%204.pdf?cachekey=60:d7fba470d40d0766875d715550acf1c5=============================&datakey=Xa2EcyJGrOR39Mi5Yk4pof4dmonBWjoeg8D+Ktxu0j5jLgRvsmJpk4x98+L5WOIoJMmi3Qn7XDyJVtyhYzrN/RZZwUY55xjfxSN3BpBu+YLuYmvlSbJWby9zeMGoQVH1NlCUijwI+J4B0tPlw63MQFZb1brRjf76yu8IApEd3hBRCySxstBRBiX4AOAkBS/LDoFPbKgek94dXK4MthmBF9q2YVPIyzveL3a4jdJjpn/QXIAmb8PQznB82fRARUaBileTdUJB1OeltypX3XFtQtY36KE0FcFecskcjvx08UTut2bzmXJd5o4Mim1EXt6PCH+reTlfR3a36cRMdvknpA&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iVGhlJTIwUGh5c2ljcyUyMEJvb2slMjBXb3JrYm9vayUyMFVuaXRzJTIwMyUyMCUyNiUyMDQucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ1RoZSUyMFBoeXNpY3MlMjBCb29rJTIwV29ya2Jvb2slMjBVbml0cyUyMDMlMjAlMjYlMjA0LnBkZjs&servtime=1727601252353&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7">View PDF</a>
             </td>
             <td>44.1 MB</td>
-<tr> <td colspan="3" style="text-align: left;"> <strong><a href="javascript:void(0);" onclick="toggleChapters()">Nelson Physics (Click to view chapters)</a></strong> </td> </tr> <tbody id="chapters" class="hidden"> <tr data-size="10"> <td>Chapter 1: Introduction</td> <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td> <td>10 MB</td> </tr> <tr data-size="12"> <td>Chapter 2: Mechanics</td> <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td> <td>12 MB</td> </tr> <tr data-size="15"> <td>Chapter 3: Waves</td> <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td> <td>15 MB</td> </tr> <tr data-size="14"> <td>Chapter 4: Electricity</td> <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td> <td>14 MB</td> </tr> <tr data-size="11"> <td>Chapter 5: Magnetism</td> <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td> <td>11 MB</td> </tr> </tbody> </table> <script> function toggleChapters() { const chapters = document.getElementById("chapters"); if (chapters.classList.contains("hidden")) { chapters.classList.remove("hidden"); } else { chapters.classList.add("hidden"); } }        
-</tr>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left;">
+                <strong><a href="javascript:void(0);" onclick="toggleChapters()">Nelson Physics (Click to view chapters)</a></strong>
+            </td>
+        </tr>
+        <tbody id="chapters" class="hidden">
+            <tr data-size="10">
+                <td>Chapter 1: Introduction</td>
+                <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
+                <td>10 MB</td>
+            </tr>
+            <tr data-size="12">
+                <td>Chapter 2: Mechanics</td>
+                <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
+                <td>12 MB</td>
+            </tr>
+            <tr data-size="15">
+                <td>Chapter 3: Waves</td>
+                <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
+                <td>15 MB</td>
+            </tr>
+            <tr data-size="14">
+                <td>Chapter 4: Electricity</td>
+                <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
+                <td>14 MB</td>
+            </tr>
+            <tr data-size="11">
+                <td>Chapter 5: Magnetism</td>
+                <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
+                <td>11 MB</td>
+            </tr>
+        </tbody>
     </table>
 
     <script>
-    function toggleChapters() {
+        function toggleChapters() {
             const chapters = document.getElementById("chapters");
             if (chapters.classList.contains("hidden")) {
                 chapters.classList.remove("hidden");
@@ -201,6 +235,7 @@
                 chapters.classList.add("hidden");
             }
         }
+
         function sortResources() {
             const alphaSort = document.getElementById("sort-alpha").value;
             const sizeSort = document.getElementById("sort-size").value;
