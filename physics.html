@@ -40,15 +40,6 @@
             margin: 20px;
             padding: 5px;
         }
-        .directory {
-            display: none;
-            margin-top: 10px;
-        }
-        .chapter {
-            cursor: pointer;
-            color: #43B581;
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -79,18 +70,38 @@
             </td>
             <td>150.3 MB</td>
         </tr>
+        <tr>
+            <td colspan="2" style="text-align: left;">
+                <strong>Nelson Physics</strong>
+            </td>
+            <td></td>
+        </tr>
+        <tr data-size="10">
+            <td>Chapter 1: Introduction</td>
+            <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
+            <td>10 MB</td>
+        </tr>
+        <tr data-size="12">
+            <td>Chapter 2: Mechanics</td>
+            <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
+            <td>12 MB</td>
+        </tr>
+        <tr data-size="15">
+            <td>Chapter 3: Waves</td>
+            <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
+            <td>15 MB</td>
+        </tr>
+        <tr data-size="14">
+            <td>Chapter 4: Electricity</td>
+            <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
+            <td>14 MB</td>
+        </tr>
+        <tr data-size="11">
+            <td>Chapter 5: Magnetism</td>
+            <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
+            <td>11 MB</td>
+        </tr>
     </table>
-
-    <div>
-        <span id="nelson-physics" style="cursor:pointer; color:#43B581; text-decoration:underline;">Nelson Physics</span>
-        <div id="directory" class="directory">
-            <div class="chapter" onclick="openUrl('https://example.com/chapter1')">Chapter 1: Introduction (Size: 10 MB)</div>
-            <div class="chapter" onclick="openUrl('https://example.com/chapter2')">Chapter 2: Mechanics (Size: 12 MB)</div>
-            <div class="chapter" onclick="openUrl('https://example.com/chapter3')">Chapter 3: Waves (Size: 15 MB)</div>
-            <div class="chapter" onclick="openUrl('https://example.com/chapter4')">Chapter 4: Electricity (Size: 14 MB)</div>
-            <div class="chapter" onclick="openUrl('https://example.com/chapter5')">Chapter 5: Magnetism (Size: 11 MB)</div>
-        </div>
-    </div>
 
     <script>
         function sortResources() {
@@ -119,15 +130,6 @@
             for (const row of rows) {
                 table.appendChild(row);
             }
-        }
-
-        document.getElementById('nelson-physics').onclick = function() {
-            const directory = document.getElementById('directory');
-            directory.style.display = directory.style.display === 'none' ? 'block' : 'none';
-        };
-
-        function openUrl(url) {
-            window.open(url, '_blank');
         }
     </script>
 </body>
