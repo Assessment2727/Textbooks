@@ -40,6 +40,9 @@
             margin: 20px;
             padding: 5px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -71,39 +74,49 @@
             <td>150.3 MB</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: left;">
-                <strong>Nelson Physics</strong>
+            <td colspan="3" style="text-align: left;">
+                <strong><a href="javascript:void(0);" onclick="toggleChapters()">Nelson Physics (Click to view chapters)</a></strong>
             </td>
-            <td></td>
         </tr>
-        <tr data-size="10">
-            <td>Chapter 1: Introduction</td>
-            <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
-            <td>10 MB</td>
-        </tr>
-        <tr data-size="12">
-            <td>Chapter 2: Mechanics</td>
-            <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
-            <td>12 MB</td>
-        </tr>
-        <tr data-size="15">
-            <td>Chapter 3: Waves</td>
-            <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
-            <td>15 MB</td>
-        </tr>
-        <tr data-size="14">
-            <td>Chapter 4: Electricity</td>
-            <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
-            <td>14 MB</td>
-        </tr>
-        <tr data-size="11">
-            <td>Chapter 5: Magnetism</td>
-            <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
-            <td>11 MB</td>
-        </tr>
+        <tbody id="chapters" class="hidden">
+            <tr data-size="10">
+                <td>Chapter 1: Introduction</td>
+                <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
+                <td>10 MB</td>
+            </tr>
+            <tr data-size="12">
+                <td>Chapter 2: Mechanics</td>
+                <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
+                <td>12 MB</td>
+            </tr>
+            <tr data-size="15">
+                <td>Chapter 3: Waves</td>
+                <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
+                <td>15 MB</td>
+            </tr>
+            <tr data-size="14">
+                <td>Chapter 4: Electricity</td>
+                <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
+                <td>14 MB</td>
+            </tr>
+            <tr data-size="11">
+                <td>Chapter 5: Magnetism</td>
+                <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
+                <td>11 MB</td>
+            </tr>
+        </tbody>
     </table>
 
     <script>
+        function toggleChapters() {
+            const chapters = document.getElementById("chapters");
+            if (chapters.classList.contains("hidden")) {
+                chapters.classList.remove("hidden");
+            } else {
+                chapters.classList.add("hidden");
+            }
+        }
+
         function sortResources() {
             const alphaSort = document.getElementById("sort-alpha").value;
             const sizeSort = document.getElementById("sort-size").value;
