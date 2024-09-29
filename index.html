@@ -3,40 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Textbooks</title>
+    <title>Physics Resources</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #2C2F33;
-            color: #FFF;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #FFFFFF;
             text-align: center;
+            margin: 0;
+            padding: 20px;
         }
         h1 {
-            margin-top: 50px;
-            font-size: 36px;
+            color: #7289DA;
         }
-        button {
-            display: block;
-            width: 200px;
-            padding: 15px;
-            margin: 15px auto;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #7289DA;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
         }
-        button:hover {
-            background-color: #5A6FB1;
+        th, td {
+            border: 1px solid #7289DA;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #23272A;
+        }
+        a {
+            color: #43B581; /* Improved link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        select {
+            margin: 20px;
+            padding: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Textbooks</h1>
+    <h1>Physics Resources</h1>
     
-    <button onclick="location.href='lowerschool.html'">Lowerschool</button>
-    <button onclick="location.href='upperschool.html'">Upperschool</button>
+    <select id="sort-alpha" onchange="sortResources()">
+        <option value="">Sort Alphabetically</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+    </select>
     
+    <select id="sort-size" onchange="sortResources()">
+        <option value="">Sort by Size</option>
+        <option value="asc">Small to Large</option>
+        <option value="desc">Large to Small</option>
+    </select>
+
+    <table id="resources-table">
+        <tr>
+            <th>Resource</th>
+            <th>Link</th>
+            <th>File Size</th>
+        </tr>
+        <tr data-size="150.3">
+            <td>National Physics 1 Thermal Nuclear & Electrical Physics</td>
+            <td>
+                <a href="https://m107.syncusercontent1.com/mfs-60:31dc02070a9d0964b96051d1b74f3134=============================/p/National%20Physics%201%20Thermal%20Nuclear%20%26%20Electrical%20Physics.pdf?allowdd=0&datakey=GPmGSpcOlyLIFw7+bUqTtnhe95xMLGYA5iQn3MkCJDrDRyYrMPCKy4FPZXE7+XjGBfqEcPGifNlKrC6VfRpZD+ER/SQEMvjPDHyBDtUAv5Uo9aWy/8HVxvn3bSN1cagl84zMHF2rfNF5CT5oc0GXPo5gI8Enp7CdgmnrpyBOCwBWXzUtnICvRUZleBLKTEfC1x3vnxojSEa1bHe7XPhqn4yFxKcwZsXHEfL4ciDX3IRGZIbAXzMoj8F+TLXnTIh1mIblDTCKvkgwirLZd2jUV/ElHMF1xopdaTZdYa5uzoCYAKAbu5/LEgWr0/hHkS8jmPicfA1Jmn5yVXI2/75xzQ&engine=ln-3.1.38&errurl=WvQhyTqstx2rapf4DAxiqCP7iP2fWKAh1uMgdHbnIcURA0HlzIPwXL5s/nMma8aBX2B9KDlQ0N1a1lGqNev7nyI0G4W9jiWL/Nbpft2AGMkA3CjRFyVHPDUJvkiXwOMEiu5owY8btXwLszU4uWnHJ1lJpdAr9oSMcSoNB+XlwjhuZDOMMWDQX79fZKTaSHFa2+z6zREp3ShtuwsVXxYCC1fqxEw9+tdwNFJz7J0VMJlM50X7qcPbEZUUQg+dwh3gnTWWRh32dIZfQrkJ0tAhto6DlWQXKvX00I2HZbnirrinEWW4K2DUPa5JycBNa9CbjtrDUq0+ZKZRPJG2rO6JJA==&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iTmF0aW9uYWwlMjBQaHlzaWNzJTIwMSUyMFRoZXJtYWwlMjBOdWNsZWFyJTIwJTI2JTIwRWxlY3RyaWNhbCUyMFBoeXNpY3MucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ05hdGlvbmFsJTIwUGh5c2ljcyUyMDElMjBUaGVybWFsJTIwTnVjbGVhciUyMCUyNiUyMEVsZWN0cmljYWwlMjBQaHlzaWNzLnBkZjs&ipaddress=2023045730&linkcachekey=6796b31c0&linkoid=1938130004&mode=101&sharelink_id=19703300710004&timestamp=1727595943785&uagent=e7f7872d1f072df13adde147b911fb7b6f889d07&signature=6f99c049c29b059bfa6b8e55b21c79f19b74b7ac&cachekey=60:31dc02070a9d0964b96051d1b74f3134=============================" target="_blank">View PDF</a>
+            </td>
+            <td>150.3 MB</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: left;">
+                <strong>Nelson Physics</strong>
+            </td>
+            <td></td>
+        </tr>
+        <tr data-size="10">
+            <td>Chapter 1: Introduction</td>
+            <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
+            <td>10 MB</td>
+        </tr>
+        <tr data-size="12">
+            <td>Chapter 2: Mechanics</td>
+            <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
+            <td>12 MB</td>
+        </tr>
+        <tr data-size="15">
+            <td>Chapter 3: Waves</td>
+            <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
+            <td>15 MB</td>
+        </tr>
+        <tr data-size="14">
+            <td>Chapter 4: Electricity</td>
+            <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
+            <td>14 MB</td>
+        </tr>
+        <tr data-size="11">
+            <td>Chapter 5: Magnetism</td>
+            <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
+            <td>11 MB</td>
+        </tr>
+    </table>
+
+    <script>
+        function sortResources() {
+            const alphaSort = document.getElementById("sort-alpha").value;
+            const sizeSort = document.getElementById("sort-size").value;
+            const table = document.getElementById("resources-table");
+            const rows = Array.from(table.rows).slice(1); // Exclude header
+
+            if (alphaSort) {
+                rows.sort((a, b) => {
+                    const aText = a.cells[0].innerText.toLowerCase();
+                    const bText = b.cells[0].innerText.toLowerCase();
+                    return alphaSort === "asc" ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                });
+            }
+
+            if (sizeSort) {
+                rows.sort((a, b) => {
+                    const aSize = parseFloat(a.dataset.size);
+                    const bSize = parseFloat(b.dataset.size);
+                    return sizeSort === "asc" ? aSize - bSize : bSize - aSize;
+                });
+            }
+
+            // Append sorted rows back to the table
+            for (const row of rows) {
+                table.appendChild(row);
+            }
+        }
+    </script>
 </body>
 </html>
