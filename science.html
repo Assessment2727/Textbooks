@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2C2F33;
+            color: #FFFFFF;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #7289DA;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid #7289DA;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #23272A;
+        }
+        a {
+            color: #43B581; /* Improved link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        select {
+            margin: 20px;
+            padding: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Physics Resources</h1>
+    
+    <select id="sort-alpha" onchange="sortResources()">
+        <option value="">Sort Alphabetically</option>
+        <option value="asc">A-Z</option>
+        <option value="desc">Z-A</option>
+    </select>
+    
+    <select id="sort-size" onchange="sortResources()">
+        <option value="">Sort by Size</option>
+        <option value="asc">Small to Large</option>
+        <option value="desc">Large to Small</option>
+    </select>
+
+    <table id="resources-table">
+        <tr>
+            <th>Resource</th>
+            <th>Link</th>
+            <th>File Size</th>
+        </tr>
+        <tr data-size="8.1">
+            <td>100 Hands on Biology Activities</td>
+            <td>
+                <a href="https://cp.sync.com/mfs-60:e74f27a5649a56edb641c5ea41bc8c03=============================/u/100%20Hands%20on%20Biology%20Activities.pdf?cachekey=60:e74f27a5649a56edb641c5ea41bc8c03=============================&datakey=VGtKGDm0bkAZGaVVTFJODTyR13phaV+9RzLH1aHXZkTj/Me7PDDizd/PTdI/0cgcHQOXtD4guZgoiWp93GKsloO0qenyJZRQgXavWRWX6KaqIAPPnXg5ARZBHbUvPrDaThk7y2e2BHEgHGkJtUBEg/CHfHllBhq33GEr+4HROahKp8eBm2xlKz3FBufX/sQhnshEaW7X35vK79u4MrWOS4Vz/1px/ULqb4e9ptCD8J0S93Y+eEP5FyTDqz7F4PGbLnVzEoqjlxHSzbJSy3i6HgnVOtEHdQmpUN/QnzWXuNdNKC8J1CmM42Et+jGfQXxUw/09pseKLRPSQ2J3x2BKcA&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iMTAwJTIwSGFuZHMlMjBvbiUyMEJpb2xvZ3klMjBBY3Rpdml0aWVzLnBkZiI7ZmlsZW5hbWUqPVVURi04JycxMDAlMjBIYW5kcyUyMG9uJTIwQmlvbG9neSUyMEFjdGl2aXRpZXMucGRmOw&servtime=1727863164752&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+            </td>
+            <td>8.1 MB</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left;">
+                <strong><a href="javascript:void(0);" onclick="toggleChapters()">Nelson Physics (Click to view chapters)</a></strong>
+            </td>
+        </tr>
+        <tbody id="chapters" class="hidden">
+            <tr data-size="10">
+                <td>Chapter 1: Introduction</td>
+                <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
+                <td>10 MB</td>
+            </tr>
+            <tr data-size="12">
+                <td>Chapter 2: Mechanics</td>
+                <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
+                <td>12 MB</td>
+            </tr>
+            <tr data-size="15">
+                <td>Chapter 3: Waves</td>
+                <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
+                <td>15 MB</td>
+            </tr>
+            <tr data-size="14">
+                <td>Chapter 4: Electricity</td>
+                <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
+                <td>14 MB</td>
+            </tr>
+            <tr data-size="11">
+                <td>Chapter 5: Magnetism</td>
+                <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
+                <td>11 MB</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function toggleChapters() {
+            const chapters = document.getElementById("chapters");
+            if (chapters.classList.contains("hidden")) {
+                chapters.classList.remove("hidden");
+            } else {
+                chapters.classList.add("hidden");
+            }
+        }
+
+        function sortResources() {
+            const alphaSort = document.getElementById("sort-alpha").value;
+            const sizeSort = document.getElementById("sort-size").value;
+            const table = document.getElementById("resources-table");
+            const rows = Array.from(table.rows).slice(1); // Exclude header
+
+            if (alphaSort) {
+                rows.sort((a, b) => {
+                    const aText = a.cells[0].innerText.toLowerCase();
+                    const bText = b.cells[0].innerText.toLowerCase();
+                    return alphaSort === "asc" ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                });
+            }
+
+            if (sizeSort) {
+                rows.sort((a, b) => {
+                    const aSize = parseFloat(a.dataset.size);
+                    const bSize = parseFloat(b.dataset.size);
+                    return sizeSort === "asc" ? aSize - bSize : bSize - aSize;
+                });
+            }
+
+            // Append sorted rows back to the table
+            for (const row of rows) {
+                table.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
 
