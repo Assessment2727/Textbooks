@@ -30,7 +30,7 @@
             background-color: #23272A;
         }
         a {
-            color: #43B581; /* Improved link color */
+            color: #43B581;
             text-decoration: none;
         }
         a:hover {
@@ -40,13 +40,10 @@
             margin: 20px;
             padding: 5px;
         }
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <h1>Physics Resources</h1>
+    <h1>Science Resources</h1>
     
     <select id="sort-alpha" onchange="sortResources()">
         <option value="">Sort Alphabetically</option>
@@ -61,62 +58,101 @@
     </select>
 
     <table id="resources-table">
-        <tr>
-            <th>Resource</th>
-            <th>Link</th>
-            <th>File Size</th>
-        </tr>
-        <tr data-size="8.1">
-            <td>100 Hands on Biology Activities</td>
-            <td>
-                <a href="https://cp.sync.com/mfs-60:e74f27a5649a56edb641c5ea41bc8c03=============================/u/100%20Hands%20on%20Biology%20Activities.pdf?cachekey=60:e74f27a5649a56edb641c5ea41bc8c03=============================&datakey=VGtKGDm0bkAZGaVVTFJODTyR13phaV+9RzLH1aHXZkTj/Me7PDDizd/PTdI/0cgcHQOXtD4guZgoiWp93GKsloO0qenyJZRQgXavWRWX6KaqIAPPnXg5ARZBHbUvPrDaThk7y2e2BHEgHGkJtUBEg/CHfHllBhq33GEr+4HROahKp8eBm2xlKz3FBufX/sQhnshEaW7X35vK79u4MrWOS4Vz/1px/ULqb4e9ptCD8J0S93Y+eEP5FyTDqz7F4PGbLnVzEoqjlxHSzbJSy3i6HgnVOtEHdQmpUN/QnzWXuNdNKC8J1CmM42Et+jGfQXxUw/09pseKLRPSQ2J3x2BKcA&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iMTAwJTIwSGFuZHMlMjBvbiUyMEJpb2xvZ3klMjBBY3Rpdml0aWVzLnBkZiI7ZmlsZW5hbWUqPVVURi04JycxMDAlMjBIYW5kcyUyMG9uJTIwQmlvbG9neSUyMEFjdGl2aXRpZXMucGRmOw&servtime=1727863164752&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
-            </td>
-            <td>8.1 MB</td>
-        </tr>
-               <tbody id="chapters" class="hidden">
-            <tr data-size="10">
-                <td>Chapter 1: Introduction</td>
-                <td><a href="https://example.com/chapter1" target="_blank">View Chapter</a></td>
-                <td>10 MB</td>
+        <thead>
+            <tr>
+                <th>Resource</th>
+                <th>Link</th>
+                <th>File Size</th>
             </tr>
-            <tr data-size="12">
-                <td>Chapter 2: Mechanics</td>
-                <td><a href="https://example.com/chapter2" target="_blank">View Chapter</a></td>
-                <td>12 MB</td>
+        </thead>
+        <tbody>
+            <tr data-size="8.1">
+                <td>100 Hands on Biology Activities</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:e74f27a5649a56edb641c5ea41bc8c03=============================/u/100%20Hands%20on%20Biology%20Activities.pdf?cachekey=60:e74f27a5649a56edb641c5ea41bc8c03=============================&datakey=VGtKGDm0bkAZGaVVTFJODTyR13phaV+9RzLH1aHXZkTj/Me7PDDizd/PTdI/0cgcHQOXtD4guZgoiWp93GKsloO0qenyJZRQgXavWRWX6KaqIAPPnXg5ARZBHbUvPrDaThk7y2e2BHEgHGkJtUBEg/CHfHllBhq33GEr+4HROahKp8eBm2xlKz3FBufX/sQhnshEaW7X35vK79u4MrWOS4Vz/1px/ULqb4e9ptCD8J0S93Y+eEP5FyTDqz7F4PGbLnVzEoqjlxHSzbJSy3i6HgnVOtEHdQmpUN/QnzWXuNdNKC8J1CmM42Et+jGfQXxUw/09pseKLRPSQ2J3x2BKcA&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iMTAwJTIwSGFuZHMlMjBvbiUyMEJpb2xvZ3klMjBBY3Rpdml0aWVzLnBkZiI7ZmlsZW5hbWUqPVVURi04JycxMDAlMjBIYW5kcyUyMG9uJTIwQmlvbG9neSUyMEFjdGl2aXRpZXMucGRmOw&servtime=1727863164752&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>8.1 MB</td>
             </tr>
-            <tr data-size="15">
-                <td>Chapter 3: Waves</td>
-                <td><a href="https://example.com/chapter3" target="_blank">View Chapter</a></td>
-                <td>15 MB</td>
+            <tr data-size="6">
+                <td>100 Hands on Chemistry Activities</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:5aefb824d5c295b9d237e045333b1e42=============================/u/100%20Hands%20on%20Chemistry%20Activities.pdf?cachekey=60:5aefb824d5c295b9d237e045333b1e42=============================&datakey=RUb5SN6FMk8l15CAd0qO45P/VMIySEwpQyXbTFIRHiCEzTP+Ms0XryzN2nEfJVuB8OHmu5NTlqUvPaYDg4jZ/AQDPy5wrjh/+c8DM1Z4EdTTO/YIoLGSqn6ao9FqyzEZT382voQHUsPjUwXiTCKydxNu/MfnH/XersZbzq8VrrYe+dYTG+TLswUN5gPHa7aFmwL3yz5lYZYCZYcB6luyfqpxacZKhhKjwrxB8GVzCgkWeA7u5n+3QA2ktWIQdLSrKcKzGB/QlBSDfkrg/lRvZYWSoUkg0BLRLKvId4CQwgLReCPIGmP+rXd7BdTJAnV49Cx1locx3yejanBWWwxpeQ&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iMTAwJTIwSGFuZHMlMjBvbiUyMENoZW1pc3RyeSUyMEFjdGl2aXRpZXMucGRmIjtmaWxlbmFtZSo9VVRGLTgnJzEwMCUyMEhhbmRzJTIwb24lMjBDaGVtaXN0cnklMjBBY3Rpdml0aWVzLnBkZjs&servtime=1727864210203&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>6 MB</td>
             </tr>
-            <tr data-size="14">
-                <td>Chapter 4: Electricity</td>
-                <td><a href="https://example.com/chapter4" target="_blank">View Chapter</a></td>
-                <td>14 MB</td>
+            <tr data-size="17.7">
+                <td>100 Hands on Physical Sciences Activities</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:ca8faf81f0e00ad257dfcf5e2a54e4e7=============================/u/100%20Hands%20On%20Physical%20Sciences%20Activities.pdf?cachekey=60:ca8faf81f0e00ad257dfcf5e2a54e4e7=============================&datakey=TtXp0eSozeWwj+DFHJ92oQtdzDgX/OWnQM1M+zv7obTPCCNzBLWgRmpWJABV1TYMtILSrS0ExnEdWucLKQhj1WtZ90GkIwJQXmH1KkjuUJkvZ+ak5arRtBqDLa4Z6KqDvzXUCVV6/9Fk4GIx2H+zJ+XQUECihld5oMjaXQ1WDOvC2vlHNa+zTD3vf1gOKra45bbjoVHpif6MY1G1YnA3sc8xLNSKhTsjHEeb5LDhPf0jnI22wgCXzlqGVsc4nCpS93nPPSSJQDH3IkYHoQf2wgVY93VgxzQSt9iLbj1GV7O6n6CEwLMGOxQQ85uWJdLBRGkFJQRIn1CaOZAvootFfw&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iMTAwJTIwSGFuZHMlMjBPbiUyMFBoeXNpY2FsJTIwU2NpZW5jZXMlMjBBY3Rpdml0aWVzLnBkZiI7ZmlsZW5hbWUqPVVURi04JycxMDAlMjBIYW5kcyUyME9uJTIwUGh5c2ljYWwlMjBTY2llbmNlcyUyMEFjdGl2aXRpZXMucGRmOw&servtime=1727864347568&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>17.7 MB</td>
             </tr>
-            <tr data-size="11">
-                <td>Chapter 5: Magnetism</td>
-                <td><a href="https://example.com/chapter5" target="_blank">View Chapter</a></td>
-                <td>11 MB</td>
+            <tr data-size="27.3">
+                <td>Pearson Science Activity Book 7</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:a843959d7bd109d60fdf210598b9d1da=============================/u/A.B.7.pdf?cachekey=60:a843959d7bd109d60fdf210598b9d1da=============================&datakey=JTYGOcifF+lL/TYrF59Sqtvhqk5tE02T3UFvT4/qm/u1hUHw6bwYcPdcHmzRqaUi5ximggFYYml4gwBXXU6JwuOXJJXtkN6MrZ5dtA/TZP9mjgq1GoWZE6MqboaJMdNxg0xYGMqJGIPR8a7iAC8V52wT+78A9nRlVzTM0LSSw+FL27Is7IafF6c+A891dJIvS4w959M2CVJBiFvFh0Cnn2Cxhl010qxAzWKyruQpVoSSKSFo3/f0is+cjMrHPZJOsPo7l+iUhzXr2vRmjLEbdE9IfkQ9e74Tsyp40p/W7HeyFh5sem2ueIcoH1kWAbdAqPkQCa7ycMCrQyA7tgDE5A&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQS5CLjcucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0EuQi43LnBkZjs&servtime=1727864513069&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>27.3 MB</td>
+            </tr>
+            <tr data-size="28.4">
+                <td>Pearson Science Activity Book 8</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:f922ff34954d39adfc318ef067d40eb2=============================/u/A.B.8.pdf?cachekey=60:f922ff34954d39adfc318ef067d40eb2=============================&datakey=RKgyJcBSH7wKFJ0Kwm63FYfxWqCTpJMIuYLgqyWq82KcxKaQSX8a4/7xyP8C7s+42AgwJTN4BPfpKLnwEnvKA9DrSyebzZ7ytS65AzGpwrovZjS9F5CZd5EZ7V5ooOkMxhVHfbMq790JGSB0VwFS5iWA9fkCjSzz+/7iRy9eOhjMAvFHFk4SVtSbvHE/huHBR8to4jKTFxkqyLmrwufzwy5upSdNtceg0ErY72QZZ6Wm/yQ7ye4fi8qG3hA22vAeRIJwHsgcqrMLlHgUPOnjFXQ23FVDE1Qi9OXWHg1pDlL8Tilx4nddZoQfoXxaLFLs4xnTr60/BxopR/iO/2A67Q&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQS5CLjgucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0EuQi44LnBkZjs&servtime=1727864603238&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>28.4 MB</td>
+            </tr>
+            <tr data-size="33.2">
+                <td>Pearson Science Activity Book 9</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:9e478c5858e5585765db3fbb0ec49684=============================/u/A.B.9.pdf?cachekey=60:9e478c5858e5585765db3fbb0ec49684=============================&datakey=GSfVNZ9kzgakNPZSRlO2iyrNPQamOeT+rAggHjWuNHeXNeyrxtjKQpjBDITTE8nghIBC6AJX3hSmtU8oBvDva2UhiHf4z22SDfNBURAHcOWCo7GRMmP0+CrPOawhAb6ShvBl6MMHo7Y6XW/UCQNo8BdMsLLD+eIvoF0ZCmLA2F5FhVLaHiuRkp3h59DY1eOwmKN5NbU1smCCKDrG727ZGdK9bl15T0YCYPoe8XwUAB7WoBB9NyknAzE/cL0pDt9W79LuAR4bRg2tIczU7PsA2fkdFFljNwnXmjOJXmPfmH4vdO1NYm2hKusKUUb0dSAOllREabI+jFoyOTO9qWxwtQ&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQS5CLjkucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0EuQi45LnBkZjs&servtime=1727864763241&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>33.2 MB</td>
+            </tr>
+            <tr data-size="37.3">
+                <td>Pearson Science Activity Book 10 2e</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:cae54ec4924a02692e95d84347fead5d=============================/u/A.B.10%2C%202e.pdf?cachekey=60:cae54ec4924a02692e95d84347fead5d=============================&datakey=j6Xe/YEtKsDF3BqkfO8SJCKti07xAVy+h7QD1dsS4M0cd5AP+GpppAIu65H3OS9vlfilGl5rk1WQql8SvywB33jlNLf9qEkfSq/u18gnSRjAvlc28sNB45xdOVBzCRpzzyQtO+5zyDzWIFxdOd9JutBgOcQ+0okVj6IKyyavg2eyON39AOlAIlG4CagxGuq4ggOQIgcjSjvB67g/ad32jbr4PH7DfdmkHHeWXzzBkoc3smwb14w6PrGf1J/EnUe+UbVobK4PeVCfw9dqy9Msyu+ZQTAvqtEzEeX+TTVSeSQKpN7vTYlWrs/NUFLXV4KHoFleOKsQm97j2Ze+XNr6RQ&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQS5CLjEwJTJDJTIwMmUucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0EuQi4xMCUyQyUyMDJlLnBkZjs&servtime=1727864968967&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>37.3 MB</td>
+            </tr>
+            <tr data-size="6.1">
+                <td>Access Science- The Living World</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:a5f1f50cf25746a6e0e5505bd8258ca5=============================/u/Access%20Science%20The%20Living%20World.pdf?cachekey=60:a5f1f50cf25746a6e0e5505bd8258ca5=============================&datakey=P+rjvcFUH34A21xfmcjUyT17DxAJP/ZN1x8cPnnZ/YJz6NalRzLdKfAosRXxc9EL06sdBcndwrR0jmCiKsuFADakNe9YUamb3rOJ2Zqcy+H9KwduqoWazIyjo5VcBXxd4mF3j/3iSM+UFWKrj5FOpnfAX5aVumgPtyN2M4LZ61cA2dvyAxMNBmfikyqN/q0a/JrsthxG5D4J5p//igD/qSD0FUR24NRutua1E98+hMo88NS8Gs7I9PNrNBJHbJDj1q63WiU2hBaDwoVXn+eK60gTSwIWFbsEt+9wKt+BSpJkEBZdbuo/0dN44W3mXlEZzauOzgBoXkaDaWb/TyTTTQ&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQWNjZXNzJTIwU2NpZW5jZSUyMFRoZSUyMExpdmluZyUyMFdvcmxkLnBkZiI7ZmlsZW5hbWUqPVVURi04JydBY2Nlc3MlMjBTY2llbmNlJTIwVGhlJTIwTGl2aW5nJTIwV29ybGQucGRmOw&servtime=1727865026036&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>6.1 MB</td>
+            </tr>
+            <tr data-size="6.2">
+                <td>Access Science- The Material World </td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:3ee58966dc335d318d178b87fdddee9e=============================/u/Access%20Science%20The%20Material%20World.pdf?cachekey=60:3ee58966dc335d318d178b87fdddee9e=============================&datakey=Dzy7h9skSX2ox6hPxuKmPSBx3yzObJVLaYZlPlUHfU+67NLKHTUekWmK64n0HSR5fq+K1jRgaUj2YFbnBJ2g7nDVUifLe3d1Qdxw+ua3FuTCSijGGMiDAK0bFSPborBgv/r9Hcgdtl12SWseuO/g/2PF93rK4ty/rDBKLrlN5POMhoAEq5gbyuWaAcKtbwrBHskARbYV9mO5fzaqWgpRZQ+ZZvv0MfoisVpXqlhjcMGd+gtLDmPkHp+VxEt0diJe2OZ9/1BpkgMbdKc1bEsn2JF6O/HpsyMXs6Qj3tB+TwJZOyGI6StzjGXOjxhk3QB6vGMsLT0OUwXdwBmzcDhk6w&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQWNjZXNzJTIwU2NpZW5jZSUyMFRoZSUyME1hdGVyaWFsJTIwV29ybGQucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0FjY2VzcyUyMFNjaWVuY2UlMjBUaGUlMjBNYXRlcmlhbCUyMFdvcmxkLnBkZjs&servtime=1727865185479&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>6.2 MB</td>
+            </tr>
+            <tr data-size="6.4">
+                <td>Acess Science- The Physical World</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:14241ae7fe21885677e3db5e772a27b3=============================/u/Access%20Science%20The%20Physical%20World.pdf?cachekey=60:14241ae7fe21885677e3db5e772a27b3=============================&datakey=qIHbTfPwysvOsNCWktxH5sPI8ifBlEHBRhFyxlWCb62pkAV+owtbKUFQ4B/YFYsvVhl6b7PSWmQV8/NyJdiIDUEGUQ7UtGDLqzR5gZbUnKwb8b8PHtAVHO32cL24rRbuVIyBIHwPI7tPdWT3xMGdlP4rCJCB/ZVz9O1VjH0jGlReeva+68Wi7dWDcRW+T0p0hSIsbfSakqUau9JfXdxwEhr50tjiVr9lLlWEIwVfqmmEkQkuWfdQ5G1DeWtJUiLCIWemYdz7DV1GfzkuxzW6BgxJALP3Y85G5jXFyZLQIqc0cx+C2AWLcImp6WYo4nnQo9XU+Q8Dn2+oY+v5Nwutmw&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQWNjZXNzJTIwU2NpZW5jZSUyMFRoZSUyMFBoeXNpY2FsJTIwV29ybGQucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0FjY2VzcyUyMFNjaWVuY2UlMjBUaGUlMjBQaHlzaWNhbCUyMFdvcmxkLnBkZjs&servtime=1727865255812&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>6.4 MB</td>
+            </tr>
+            </tr>
+            <tr data-size="6.4">
+                <td>Acess Science- The Physical World</td>
+                <td>
+                    <a href="https://cp.sync.com/mfs-60:14241ae7fe21885677e3db5e772a27b3=============================/u/Access%20Science%20The%20Physical%20World.pdf?cachekey=60:14241ae7fe21885677e3db5e772a27b3=============================&datakey=qIHbTfPwysvOsNCWktxH5sPI8ifBlEHBRhFyxlWCb62pkAV+owtbKUFQ4B/YFYsvVhl6b7PSWmQV8/NyJdiIDUEGUQ7UtGDLqzR5gZbUnKwb8b8PHtAVHO32cL24rRbuVIyBIHwPI7tPdWT3xMGdlP4rCJCB/ZVz9O1VjH0jGlReeva+68Wi7dWDcRW+T0p0hSIsbfSakqUau9JfXdxwEhr50tjiVr9lLlWEIwVfqmmEkQkuWfdQ5G1DeWtJUiLCIWemYdz7DV1GfzkuxzW6BgxJALP3Y85G5jXFyZLQIqc0cx+C2AWLcImp6WYo4nnQo9XU+Q8Dn2+oY+v5Nwutmw&mode=101&api_version=1&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQWNjZXNzJTIwU2NpZW5jZSUyMFRoZSUyMFBoeXNpY2FsJTIwV29ybGQucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0FjY2VzcyUyMFNjaWVuY2UlMjBUaGUlMjBQaHlzaWNhbCUyMFdvcmxkLnBkZjs&servtime=1727865255812&engine=cp-3.1.38&userid=1938130004&deviceid=4454420004&devicetypeid=3&access_token=a724e484bd9e5c334ca61a7b481445aa0c4d712dc6fd81648acc60ee98c6dde7" target="_blank">View PDF</a>
+                </td>
+                <td>6.4 MB</td>
             </tr>
         </tbody>
     </table>
 
     <script>
-        function toggleChapters() {
-            const chapters = document.getElementById("chapters");
-            if (chapters.classList.contains("hidden")) {
-                chapters.classList.remove("hidden");
-            } else {
-                chapters.classList.add("hidden");
-            }
-        }
-
         function sortResources() {
             const alphaSort = document.getElementById("sort-alpha").value;
             const sizeSort = document.getElementById("sort-size").value;
             const table = document.getElementById("resources-table");
-            const rows = Array.from(table.rows).slice(1); // Exclude header
+            const rows = Array.from(table.getElementsByTagName("tr")).slice(1); // Exclude header
 
             if (alphaSort) {
                 rows.sort((a, b) => {
@@ -142,4 +178,3 @@
     </script>
 </body>
 </html>
-
